@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Call to iconsawesome -->
+    <script src="https://kit.fontawesome.com/5ac85889ee.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://kit.fontawesome.com/5ac85889ee.js">
+    <!-- Call to bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Call to CSS -->
+    <link rel="stylesheet" href="style.css">
+    <title>Tecno Soft</title>
+</head>
+
+<body id="body">
+    <!-- NAV -->
+    <header class="container-fluid bg-dark sticky-top d-flex px-3">
+        <span class="text-light fs-3 p-2 me-5"><b>T</b>ecno<b>S</b>oft</span>
+        <div class="d-flex">
+            <ul class="nav nav-pills ms-2 mb-3 pt-2" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
+                        aria-selected="true">Inicio</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a href="#carrito" class="text-decoration-none">
+                        <button class="nav-link" data-bs-toggle="pill"
+                        data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+                        data-bs-toggle="modal" data-bs-target="#exampleModal" aria-selected="false">Carrito <span id="carritoAmount"></span></button>
+                    </a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
+                        aria-selected="false">Contacto</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
+                    tabindex="0">...</div>
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"
+                    tabindex="0">...</div>
+                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"
+                    tabindex="0">...</div>
+                <div class="tab-pane fade" id="pills-disabled" role="tabpanel" aria-labelledby="pills-disabled-tab"
+                    tabindex="0">...</div>
+            </div>
+            <!-- Change theme button -->
+            <div id="toggle" class="mt-1 mt-2">
+                <i class="indicator"></i>
+            </div>
+    </header>
+    <!-- ------------------------------------------------------------------------------------ -->
+
+    <main class="main_index">
+        <!-- SECTION DEL CARROUSEL -->
+        <section class="section_index d-flex align-items-center text-center justify-content-center">
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="/assets/images/tecno soft.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/assets/images/articulos gamer.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/assets/images/oferta-limitada-model1.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+        <div class="wrap container-fluid text-center my-3 text-dark">
+            <h1 class="text-dark my-3 ">Escoge el producto que mas te guste</h1>
+            <div class="store-wrapper">
+                <div class="category_list d-flex">
+                    <a href="" class="col-3 bg-warning  border border-2" id="categoryItem"
+                        category="notebooks">Notebooks</a>
+                    <a href="" class="col-3 bg-warning  border border-2" id="categoryItem"
+                        category="celulares">Celulares</a>
+                    <a href="" class="col-3 bg-warning  border border-2" id="categoryItem"
+                        category="televisores">Televisores</a>
+                    <a href="" class="col-3 bg-warning  border border-2" id="categoryItem"
+                        category="consolas">Consolas</a>
+                </div>
+            </div>
+        </div>
+        <hr>
+
+        <section id="items" class="product-list container-fluid d-flex align-items-center align-self-center col-12 col-md-12 text-center flex-wrap violeta gap-3  ps-4 mt-5"></section>
+            <hr>
+            <article class="ps-4 bg-white pt-3 text-center">
+                <div class="d-flex justify-content-center">
+                    <h3 class="ps-3 fs-1 fw-bold col-6">Carrito de compras</h3>
+                        <a href="#carrito"></a>
+                    <div class="col-6">
+                        <a href=""><button id="boton-comprar"class="btn btn-primary ms-3">Comprar carrito</button></a>
+                        <button id="boton-vaciar" class="btn btn-danger ms-3">Vaciar carrito</button>
+                    </div>
+            </div>
+            <ul id="carrito" class="list-group container-fluid mt-3"></ul>
+                <div>
+                    <p class="text-center fw-bold fs-1 py-3">Total: <span id="total"></span></p>
+                </div>
+        </article>
+    </main>
+
+    <footer class="index_footer d-flex text-center bg-dark text-center mt-5 py-3">
+        <div class="col-3 pt-3">
+            <ul class="index_footer_ul">
+                <li><a href="">Inicio</a></li>
+                <li><a href="">Contacto</a></li>
+                <li><a href="">Quienes somos?</a></li>
+            </ul>
+        </div>
+
+        <div class="col-3 pt-3">
+            <ul class="index_footer_ul">
+                <li><a href="">Productos</a></li>
+                <li><a href="">Preventas</a></li>
+                <li><a href="">Productos en oferta</a></li>
+            </ul>
+        </div>
+
+        <div class="index_footer_div_redes col-6 pt-3">
+            <span class="mb-3">
+                <h3 class="fw-5 text-light">Seguinos en nuestras red</h3>
+            </span>
+
+            <div class="index_footer_div_redes_icons d-flex justify-content-center mt-3">
+
+                <a href="#" class="">
+                    <i class="fa-brands fa-instagram fa-2xl m-3"></i>
+                </a>
+
+
+                <a href="#" class="">
+                    <i class="fa-brands fa-facebook fa-2xl m-3"></i>
+                </a>
+
+                <a href="#" class="">
+                    <i class="fa-brands fa-twitter fa-2xl m-3"></i>
+                </a>
+
+                <a href="#" class=""">
+                    <i class=" fa-brands fa-linkedin fa-2xl m-3"></i>
+                </a>
+            </div>
+
+        </div>
+
+    </footer>
+    <!-- ------------------------------------------------------------------------------------ -->
+    <!-- JQUERY Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <!-- JS BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Llamado a sweetalert2 -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Base de datos -->
+    <script src="basededatos.js"></script>
+
+    <!-- Llamado a JS  -->
+    <script src="/index.js"></script>
+
+</body>
+
+</html>
