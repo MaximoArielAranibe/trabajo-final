@@ -153,6 +153,8 @@
 
     function vaciarCarrito() {
         carrito = [];
+        carritoAmmount = 0;
+        carritoValue.innerHTML = carritoAmmount;
         renderizarCarrito();
         localStorage.clear;
     }
