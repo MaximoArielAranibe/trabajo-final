@@ -18,9 +18,9 @@
         const DOMcarrito = document.querySelector('#carrito');
         const DOMtotal = document.querySelector('#total');
         const DOMbotonVaciar = document.querySelector('#boton-vaciar');
-        const DOMbotonComprar = document.querySelector('#boton-comprar');
         const miLocalStorage = window.localStorage;
-
+        const myBtn = document.querySelector('#myBtn');
+        myBtn.addEventListener('click', comprasteCarrito);
 
         async function fetchData () {
             const data = await fetch ('api.json');
@@ -77,6 +77,17 @@
     DOMitems.appendChild(miNodo);
         })};
     
+        function comprasteCarrito(evento) {
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Felicidades has comprado tu carrito con un valor de ' + '$' + calcularTotal() + ' !' ,
+                showConfirmButton: false,
+                timer: 1500
+            })
+        }
+
+    
 
     function anyadirProductoAlCarrito(evento) {
         carrito.push(evento.target.getAttribute('marcador'))
@@ -97,7 +108,6 @@
             const numeroUnidadesItem = carrito.reduce((total , itemId) => {
                 return itemId === item ? total += 1 : total;
             }, 0);
-
             const miNodo = document.createElement('li');
             miNodo.classList.add('list-group-item', 'text-right' , 'mx-2');
             miNodo.getAttribute('marcador');
@@ -118,7 +128,7 @@
             miBotonComprar.addEventListener('click', agregarItemCarrito);
             miNodo.appendChild(miBotonComprar);
             miNodo.appendChild(miBoton);
-            DOMcarrito.appendChild(miNodo)
+            DOMcarrito.appendChild(miNodo);
         });
 
         DOMtotal.textContent = calcularTotal();
@@ -138,6 +148,8 @@
         carrito = carrito.filter((carritoId) => {
             return carritoId !== id;
         });
+        carritoAmmount = 0;
+        carritoValue.innerHTML = carritoAmmount;
         renderizarCarrito();
         guardarCarritoEnElLocalStorage();
     }
@@ -171,7 +183,6 @@
 
     // Eventos
     DOMbotonVaciar.addEventListener('click', vaciarCarrito);
-    DOMbotonComprar.addEventListener('click', anyadirProductoAlCarrito);
 
     // Inicio
     cargarCarritoDeLocalStorage();
